@@ -92,10 +92,22 @@ their travels to go to the kingdom of {kingdomNames[1]}, where they may encounte
 
             //Summation
             Console.Write("Input: ");
-            int input_number = Convert.ToInt32(Console.ReadLine());
-            int[] formula_list = new int[input_number];
-
-            for (int i = 0; i < input_number; i++)
+            int num2 = 0;
+            while (num2 <= 0)
+            {
+                Console.Write("Input: ");
+                num2 = Convert.ToInt32(Console.ReadLine());
+                if (num2 <= 0)
+                {
+                    Console.WriteLine("Invalid input.");
+                }
+                else
+                {
+                    break;
+                }
+            }
+            int[] formula_list = new int[num2];
+            for (int i = 0; i < num2; i++)
             {
                 formula_list[i] = i + 1;
             }
@@ -107,8 +119,21 @@ their travels to go to the kingdom of {kingdomNames[1]}, where they may encounte
 
             // Inverse Triangle
             Console.Write("Input: ");
-            int num2 = Convert.ToInt16(Console.ReadLine());
-            for (int i = num; i >= 1; i--)
+            int num3 = 0;
+            while (num3 <= 0)
+            {
+                Console.Write("Input: ");
+                num3 = Convert.ToInt16(Console.ReadLine());
+                if (num3 <= 0)
+                {
+                    Console.WriteLine("Invalid input.");
+                }
+                else
+                {
+                    break;
+                }
+            }
+            for (int i = num3; i >= 1; i--)
             {
                 for (int j = 1; j <= i; j++)
                 {
