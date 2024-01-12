@@ -5,9 +5,10 @@
         static void Main(string[] args)
         {
             //Part 1
-            //Weight Conversion
             Console.WriteLine("Part 1");
             Console.WriteLine();
+
+            //Weight Conversion
             Console.Write("Weight in Pounds (lbs): ");
             double weightInlbs = Convert.ToDouble(Console.ReadLine());
             double weightInkg = weightInlbs * 0.4535;
@@ -63,9 +64,10 @@ their travels to go to the kingdom of {kingdomNames[1]}, where they may encounte
             Console.WriteLine();
 
             //Part 2
-            //Right Triangle
             Console.WriteLine("Part 2");
             Console.WriteLine();
+
+            //Right Triangle
             int num = 0;
             while (num <= 0)
             {
