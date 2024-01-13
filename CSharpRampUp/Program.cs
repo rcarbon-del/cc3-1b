@@ -9,24 +9,85 @@
             Console.WriteLine();
 
             //Weight Conversion
-            Console.Write("Weight in Pounds (lbs): ");
-            double weightInlbs = Convert.ToDouble(Console.ReadLine());
+            double weightInlbs = 0;
+            while (weightInlbs <= 0)
+            {
+                Console.Write("Weight in Pounds (lbs): ");
+                string input1 = Console.ReadLine();
+                if (double.TryParse(input1, out double value1))
+                {
+                    if (value1 <= 0)
+                    {
+                        Console.WriteLine("Invalid input.");
+                    }
+                    else
+                    {
+                        weightInlbs = value1;
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input.");
+                }
+
+            }
             double weightInkg = weightInlbs * 0.4535;
             double roundedWeightInkg = Math.Round(weightInkg, 2);
             Console.WriteLine($"Weight converted to Kilograms (kg): {roundedWeightInkg}");
             Console.WriteLine("==========================================");
 
             //Length Conversion
-            Console.Write("Length in Miles (mi): ");
-            double lengthInmi = Convert.ToDouble(Console.ReadLine());
+            double lengthInmi = 0;
+            while (lengthInmi <= 0)
+            {
+                Console.Write("Length in Miles (mi): ");
+                string input2 = Console.ReadLine();
+                if (double.TryParse(input2, out double value2))
+                {
+                    if (value2 <= 0)
+                    {
+                        Console.WriteLine("Invalid input.");
+                    }
+                    else
+                    {
+                        lengthInmi = value2;
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input.");
+                }
+            }
             double lengthInkm = lengthInmi * 1.6093;
             double roundedLengthInkm = Math.Round(lengthInkm, 2);
             Console.WriteLine($"Length converted to Kilometers (km): {roundedLengthInkm}");
             Console.WriteLine("==========================================");
 
             //Temperature Conversion
-            Console.Write("Temperature in Fahrenheit (°F): ");
-            double tempInF = Convert.ToDouble(Console.ReadLine());
+            double tempInF = 0;
+            while (tempInF <= 0)
+            {
+                Console.Write("Temperature in Fahrenheit (°F): ");
+                string input3 = Console.ReadLine();
+                if (double.TryParse(input3, out double value3))
+                {
+                    if (value3 <= 0)
+                    {
+                        Console.WriteLine("Invalid input.");
+                    }
+                    else
+                    {
+                        tempInF = value3;
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input.");
+                }
+            }
             double tempInC = (tempInF - 32) * 5 / 9;
             double roundedTempInC = Math.Round(tempInC, 2);
             Console.WriteLine($"Temperature converted to Celsius (°C): {roundedTempInC}");
@@ -37,15 +98,36 @@
             List<int> ageList = new List<int>();
             while (indexer <= 10)
             {
-                Console.Write("Age of Student {0}:", indexer);
-                int newAge = Convert.ToInt32(Console.ReadLine());
+                int newAge = 0;
+                while (newAge <= 0)
+                {
+                    Console.Write("Age of Student {0}: ", indexer);
+                    string input4 = Console.ReadLine();
+                    if (int.TryParse(input4, out int value4))
+                    {
+                        if (value4 < 0)
+                        {
+                            Console.WriteLine("Invalid input.");
+                        }
+                        else
+                        {
+                            newAge = value4;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input.");
+                    }
+                }
                 ageList.Add(newAge);
                 indexer += 1;
             }
-            int averageAge = ageList.Sum() / indexer;
+            int averageAge = ageList.Sum() / (indexer - 1);
             Console.WriteLine("The average age of the students is {0}.", averageAge);
             Console.WriteLine("==========================================");
 
+            //Multiline Story
             String[] names = ["Albert Van Gogh", "Trixie Mentia", "Ethan Lee", "Szean Tao", "Zhao Lee"];
             String[] kingdomNames = ["Arkdenm", "Manyger"];
             String[] equipmentNames = ["Demonheart Sword", "Floyen Armor"];
@@ -72,14 +154,22 @@ their travels to go to the kingdom of {kingdomNames[1]}, where they may encounte
             while (num <= 0)
             {
                 Console.Write("Input: ");
-                num = Convert.ToInt16(Console.ReadLine());
-                if (num <= 0)
+                string input5 = Console.ReadLine();
+                if (int.TryParse(input5, out int value5))
                 {
-                    Console.WriteLine("Invalid input.");
+                    if (value5 <= 0)
+                    {
+                        Console.WriteLine("Invalid input.");
+                    }
+                    else
+                    {
+                        num = value5;
+                        break;
+                    }
                 }
                 else
                 {
-                    break;
+                    Console.WriteLine("Invalid input.");
                 }
             }
             for (int i = 1; i <= num; i++)
@@ -93,25 +183,32 @@ their travels to go to the kingdom of {kingdomNames[1]}, where they may encounte
             Console.WriteLine("==========================================");
 
             //Summation
-            Console.Write("Input: ");
             int num2 = 0;
             while (num2 <= 0)
             {
                 Console.Write("Input: ");
-                num2 = Convert.ToInt32(Console.ReadLine());
-                if (num2 <= 0)
+                string input6 = Console.ReadLine();
+                if (int.TryParse(input6, out int value6))
                 {
-                    Console.WriteLine("Invalid input.");
+                    if (value6 <= 0)
+                    {
+                        Console.WriteLine("Invalid input.");
+                    }
+                    else
+                    {
+                        num2 = value6;
+                        break;
+                    }
                 }
                 else
                 {
-                    break;
-                }
+                    Console.WriteLine("Invalid input.");
+                }   
             }
             int[] formula_list = new int[num2];
             for (int i = 0; i < num2; i++)
             {
-                formula_list[i] = i + 1;
+                 formula_list[i] = i + 1;
             }
             Console.WriteLine("Formula: " + string.Join("+", formula_list));
 
@@ -120,19 +217,26 @@ their travels to go to the kingdom of {kingdomNames[1]}, where they may encounte
             Console.WriteLine("==========================================");
 
             // Inverse Triangle
-            Console.Write("Input: ");
             int num3 = 0;
             while (num3 <= 0)
             {
                 Console.Write("Input: ");
-                num3 = Convert.ToInt16(Console.ReadLine());
-                if (num3 <= 0)
+                string input7 = Console.ReadLine();
+                if (int.TryParse(input7, out int value7))
                 {
-                    Console.WriteLine("Invalid input.");
+                    if (value7 <= 0)
+                    {
+                      Console.WriteLine("Invalid input.");
+                    }
+                    else
+                    {
+                         num3 = value7;
+                         break;
+                    }
                 }
                 else
                 {
-                    break;
+                    Console.WriteLine("Invalid input.");
                 }
             }
             for (int i = num3; i >= 1; i--)
