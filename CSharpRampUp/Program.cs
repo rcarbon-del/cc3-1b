@@ -60,7 +60,7 @@
                     Console.WriteLine("Invalid input.");
                 }
             }
-            double lengthInkm = lengthInmi * 1.6093;
+            double lengthInkm = lengthInmi * 1.609;
             double roundedLengthInkm = Math.Round(lengthInkm, 2);
             Console.WriteLine($"Length converted to Kilometers (km): {roundedLengthInkm}");
             Console.WriteLine("==========================================");
@@ -94,16 +94,16 @@
             Console.WriteLine("==========================================");
 
             //Average Age 
-            int indexer = 1;
-            List<int> ageList = new List<int>();
+            double indexer = 1;
+            List<double> ageList = new List<double>();
             while (indexer <= 10)
             {
-                int newAge = 0;
+                double newAge = 0;
                 while (newAge <= 0)
                 {
                     Console.Write("Age of Student {0}: ", indexer);
                     string input4 = Console.ReadLine();
-                    if (int.TryParse(input4, out int value4))
+                    if (double.TryParse(input4, out double value4))
                     {
                         if (value4 < 0)
                         {
@@ -123,8 +123,9 @@
                 ageList.Add(newAge);
                 indexer += 1;
             }
-            int averageAge = ageList.Sum() / (indexer - 1);
-            Console.WriteLine("The average age of the students is {0}.", averageAge);
+            double averageAge = ageList.Sum() / (indexer - 1);
+            double roundedAverageAge = Math.Round(averageAge, 1);
+            Console.WriteLine("The average age of the students is {0}.", roundedAverageAge);
             Console.WriteLine("==========================================");
 
             //Multiline Story
