@@ -42,7 +42,9 @@
             while (lengthInmi <= 0)
             {
                 Console.Write("Length in Miles (mi): ");
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string input2 = Console.ReadLine();
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
                 if (double.TryParse(input2, out double value2))
                 {
                     if (value2 <= 0)
@@ -212,9 +214,7 @@ their travels to go to the kingdom of {kingdomNames[1]}, where they may encounte
                  formula_list[i] = i + 1;
             }
             Console.WriteLine("Formula: " + string.Join("+", formula_list));
-
-            int sum = formula_list.Sum();
-            Console.WriteLine("Summation: " + sum);
+            Console.WriteLine("Summation: " + formula_list.Sum());
             Console.WriteLine("==========================================");
 
             // Inverse Triangle
