@@ -53,8 +53,10 @@ public class Car : Vehicle
         size = VehicleSize.Compact;
     }
 
-    // Implement canFitinSpot method
-    // ...
+    public bool CanFitInSpot(ParkingSpot spot)
+    {
+        return spot.GetSize() == VehicleSize.Compact || spot.GetSize() == VehicleSize.Large;
+    }
 }
 
 public class Truck : Vehicle
@@ -66,8 +68,10 @@ public class Truck : Vehicle
         size = VehicleSize.Large;
     }
 
-    // Implement canFitinSpot method
-    // ...
+    public bool CanFitInSpot(ParkingSpot spot)
+    {
+        return spot.GetSize() == VehicleSize.Large;
+    }
 }
 
 public class Motorcycle : Vehicle
@@ -79,8 +83,10 @@ public class Motorcycle : Vehicle
         size = VehicleSize.Motorcycle;
     }
 
-    // Implement canFitinSpot method
-    // ...
+    public bool CanFitInSpot(ParkingSpot spot)
+    {
+        return true; // Motorcycles can fit in any spot
+    }
 }
 
 public class ParkingSpot
@@ -98,10 +104,9 @@ public class ParkingSpot
     }
 
     public bool IsAvailable() => vehicle == null;
-    public bool CanFitVehicle(Vehicle vehicle) => /* Check if vehicle can fit in this spot */;
 
-    public bool Park(Vehicle vehicle) => /* Park vehicle in this spot */;
-    public void RemoveVehicle() => /* Remove vehicle from this spot */;
+    // Other methods for parking spot management
+    // ...
 }
 
 public class Level
@@ -117,6 +122,7 @@ public class Level
 
     public int GetAvailableSpotsCount() => /* Calculate available spots */;
 }
+
 
     }
 }
